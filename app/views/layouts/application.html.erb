@@ -11,5 +11,16 @@
 
 <%= yield %>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+<script>
+    TweenMax.to(".cube-wrapper", 2, {scale: 3.5});
+    TweenMax.to(".ellipse", 1, {scale: 10, delay: 1, opacity: 1});
+    TweenMax.to(".cube", 2, {rotationY: 740, transformOrigin:"center"});
+    TweenMax.to(".cube", 1, {rotationX: -60, rotationZ: 30, rotationY: -20, delay: 1});
+</script>
+
+
 </body>
 </html>
