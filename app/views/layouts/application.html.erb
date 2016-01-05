@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -14,12 +15,21 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 
+
 <script>
+
+$(".cube").on("click",function(){
     TweenMax.to(".cube-wrapper", 2, {scale: 3.5});
-    TweenMax.to(".ellipse", 1, {scale: 10, delay: 1, opacity: 1});
-    TweenMax.to(".cube", 2, {rotationY: 740, transformOrigin:"center"});
+    TweenMax.to(".ellipse", 2, {scale: 2.5});
+    TweenMax.to(".cube", 2, {rotationY: -740, transformOrigin:"center"});
     TweenMax.to(".cube", 1, {rotationX: -60, rotationZ: 30, rotationY: -20, delay: 1});
+    TweenMax.to(".sparkle-one", 2, {rotationZ: 720, transformOrigin:"center", scale: 1.5, top: 100, opacity: 0, right: 300});
+    TweenMax.to(".sparkle-two", 2, {rotationZ: 720, transformOrigin:"center", scale: 1.5, top: 100, opacity: 0, left: 100});
+    TweenMax.to(".sparkle-three", 2, {rotationZ: 720, transformOrigin:"center", scale: 1.5, top: 100, opacity: 0, right: 100});
+});
+
 </script>
+
 
 
 </body>
