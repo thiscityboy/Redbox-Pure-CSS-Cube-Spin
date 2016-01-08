@@ -144,23 +144,23 @@ html, body {
 
 </style>
 
-  <%= image_tag("header.png", :width => "100%", :class => "header") %>
-  <%= image_tag("rboffun.png", :width => "70%", :class => "name") %>
-  <%= image_tag("mask-01-01.svg", :width => "100%", :class => "mask") %>
-    <div class="copy">USE CODE</div>
-    <div class="code">5KJDQQMJ</div>
-      <div class="viewport">
-        <div class="cube-wrapper">
-          <div class="custom-cube">
-            <div></div>
-            <div><%= image_tag("redbox-logo.png", :width => "140", :class => "logo") %></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+<%= image_tag("header-01.svg", :width => "100%", :class => "header") %>
+<%= image_tag("title-01.svg", :width => "70%", :class => "name") %>
+<%= image_tag("mask-01-01.svg", :width => "100%", :class => "mask") %>
+<div class="copy">USE CODE</div>
+  <div class="code">5KJDQQMJ</div>
+    <div class="viewport">
+      <div class="cube-wrapper">
+        <div class="custom-cube">
+          <div></div>
+          <div><%= image_tag("logo-01.svg", :width => "140", :class => "logo") %></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-      </div>
+    </div>
+  </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
@@ -176,7 +176,7 @@ $(".mask").swipe({
     TweenMax.to(".custom-cube", 1, {y: 100});
     TweenMax.to(".copy", 2, {y: -600, delay: 2, opacity: 1});
     TweenMax.to(".code", 2, {y: -600, delay: 2, opacity: 1});
-    TweenMax.to(".cube-wrapper", 1, {scale: 1.75, delay: 1});
+    TweenMax.to(".cube-wrapper", 1, {x: -40, scale: 1.75, delay: 1});
     TweenMax.to(".mask", 3, {scale: 4});
     TweenMax.to(".mask", 1, {opacity: 0, delay: 2});
   }
@@ -191,10 +191,9 @@ $(".mask").swipe({
     TweenMax.to(".custom-cube", 1, {y: 100});
     TweenMax.to(".copy", 2, {y: -600, delay: 2, opacity: 1});
     TweenMax.to(".code", 2, {y: -600, delay: 2, opacity: 1});
-    TweenMax.to(".cube-wrapper", 1, {scale: 1.75, delay: 1});
+    TweenMax.to(".cube-wrapper", 1, {x: -40, scale: 1.75, delay: 1});
     TweenMax.to(".mask", 3, {scale: 4});
     TweenMax.to(".mask", 1, {opacity: 0, delay: 2});
   }
 });
-
 </script>
