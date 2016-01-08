@@ -164,10 +164,11 @@ html, body {
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
 
 <script>
-$(".mask").on("click",function(){
-
+$(".mask").swipe({
+  swipeLeft:function(event, direction, distance, duration, fingerCount) {
     TweenMax.to(".custom-cube", 2, {rotationY: -1080, transformOrigin:"center"});
     TweenMax.to(".name", 1, {opacity: 0});
     TweenMax.to(".custom-cube", 1, {rotationX: -30, transformOrigin:"center", delay: 1});
@@ -178,6 +179,22 @@ $(".mask").on("click",function(){
     TweenMax.to(".cube-wrapper", 1, {scale: 1.75, delay: 1});
     TweenMax.to(".mask", 3, {scale: 4});
     TweenMax.to(".mask", 1, {opacity: 0, delay: 2});
+  }
+});
+
+$(".mask").swipe({
+  swipeRight:function(event, direction, distance, duration, fingerCount) {
+    TweenMax.to(".custom-cube", 2, {rotationY: 1080, transformOrigin:"center"});
+    TweenMax.to(".name", 1, {opacity: 0});
+    TweenMax.to(".custom-cube", 1, {rotationX: -30, transformOrigin:"center", delay: 1});
+    TweenMax.to(".custom-cube > div:first-child", 1, {rotationY: 80, z: -300, delay: 1.75});
+    TweenMax.to(".custom-cube", 1, {y: 100});
+    TweenMax.to(".copy", 2, {y: -600, delay: 2, opacity: 1});
+    TweenMax.to(".code", 2, {y: -600, delay: 2, opacity: 1});
+    TweenMax.to(".cube-wrapper", 1, {scale: 1.75, delay: 1});
+    TweenMax.to(".mask", 3, {scale: 4});
+    TweenMax.to(".mask", 1, {opacity: 0, delay: 2});
+  }
 });
 
 </script>
