@@ -1,17 +1,185 @@
-<div class="sparkle-one"><img src="<%= asset_path 'sparkle-one.png' %>" width="20"></div>
-<div class="sparkle-two"><img src="<%= asset_path 'sparkle-two.png' %>" width="20"></div>
-<div class="sparkle-three"><img src="<%= asset_path 'sparkle-three.png' %>" width="20"></div>
+<style>
 
-<div class="ellipse"></div>
 
-<div class="cube-wrapper">
-    <div class="cube">
-      <div class="top">Top</div>
-      <div class="right">Right</div>
-      <div class="bottom">Bottom</div>
-      <div class="left">Left</div>
-      <div class="front">Front</div>
-      <div class="back">Back</div>
-    </div>
-</div>
+* {
+  margin: 0px;
+  padding: 0px;
+}
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1288E9;
+}
+
+
+.viewport {
+  -webkit-perspective: 1600;
+  -webkit-perspective-origin: 50% 200px;
+  -webkit-transform: scale(0.50,0.50);
+  -moz-perspective: 1600;
+  -moz-perspective-origin: 50% 200px;
+  -moz-transform: scale(0.50,0.50);
+}
+
+.custom-cube {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 10px;
+  top: 450px;
+  height: 400px;
+  width: 400px;
+  -webkit-transition: -webkit-transform 50ms linear;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateX(0deg) rotateY(45deg);
+  -moz-transition: -moz-transform 50ms linear;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+
+
+.custom-cube > div {
+  position: absolute;
+  height: 360px;
+  width: 360px;
+  padding: 20px;
+  background-color: #FFF;
+  font-size: 1em;
+  line-height: 1em;
+  color: #fff;
+  border: 0px solid #555;
+  border-radius: 3px;
+}
+
+.custom-cube > div:first-child  {
+  background-color: #D70024;
+  -webkit-transform: rotateX(90deg) translateZ(200px);
+  -moz-transform: rotateX(90deg) translateZ(200px);
+}
+
+.custom-cube > div:nth-child(2) {
+  background-color: #E5001B;
+  -webkit-transform: translateZ(200px);
+  -moz-transform: translateZ(200px);
+}
+
+.custom-cube > div:nth-child(3) {
+  background-color: #AF0523;
+  -webkit-transform: rotateY(90deg) translateZ(200px);
+  -moz-transform: rotateY(90deg) translateZ(200px);
+  text-align: center;
+}
+
+.custom-cube > div:nth-child(4) {
+  background-color: #8C001A;
+  -webkit-transform: rotateY(180deg) translateZ(200px);
+  -moz-transform: rotateY(180deg) translateZ(200px);
+}
+
+.custom-cube > div:nth-child(5) {
+  background-color: #AF0523;
+  -webkit-transform: rotateY(-90deg) translateZ(200px);
+  -moz-transform: rotateY(-90deg) translateZ(200px);
+}
+
+.custom-cube > div:nth-child(5) p {
+  text-align: center;
+  font-size: 2.77em;
+  margin: 40px;
+  line-height: 60px;
+}
+
+.custom-cube > div:nth-child(6) {
+  background-color: #780016;
+  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
+  -moz-transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
+}
+
+.cube-wrapper {
+  position: relative;
+  z-index: 10;
+  -webkit-perspective-origin: 50% 200px;
+  -webkit-perspective: 1600;
+}
+
+.code {
+  position: absolute;
+  z-index: 10;
+  font-size: 2.5em;
+  color: white;
+  margin: auto;
+  top: 800px; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  font-family: Helvetica;
+  opacity: 0;
+}
+
+.copy {
+  position: absolute;
+  z-index: 10;
+  font-size: 1.8em;
+  margin: auto;
+  top: 770px; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  font-family: Helvetica;
+  color: white;
+  opacity: 0;
+}
+
+.logo {
+  padding-top: 10px ;
+  padding-left: 20px;
+}
+
+.name {
+  position: absolute;
+  z-index: 999;
+  margin: auto;
+  top: -220px; left: 0; bottom: 0; right: 0;
+}
+
+.header {
+  position: absolute;
+  z-index: 9999;
+}
+
+</style>
+
+  <%= image_tag("header.png", :width => "100%", :class => "header") %>
+  <%= image_tag("rboffun.png", :width => "70%", :class => "name") %>
+  <%= image_tag("mask-01.svg", :width => "100%", :class => "mask") %>
+    <div class="copy">USE CODE</div>
+    <div class="code">5KJDQQMJ</div>
+      <div class="viewport">
+        <div class="cube-wrapper">
+          <div class="custom-cube">
+            <div></div>
+            <div><%= image_tag("redbox-logo.png", :width => "140", :class => "logo") %></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+<script>
+$(".mask").on("click",function(){
+
+    TweenMax.to(".custom-cube", 2, {rotationY: -1080, transformOrigin:"center"});
+    TweenMax.to(".name", 1, {opacity: 0});
+    TweenMax.to(".custom-cube", 1, {rotationX: -30, transformOrigin:"center", delay: 1});
+    TweenMax.to(".custom-cube > div:first-child", 1, {rotationY: 80, z: -300, transformOrigin:"top", delay: 1.75});
+    TweenMax.to(".custom-cube", 1, {y: 100});
+    TweenMax.to(".copy", 2, {y: -600, delay: 2, opacity: 1});
+    TweenMax.to(".code", 2, {y: -600, delay: 2, opacity: 1});
+    TweenMax.to(".cube-wrapper", 1, {scale: 1.75, delay: 1});
+    TweenMax.to(".mask", 3, {scale: 4});
+    TweenMax.to(".mask", 1, {opacity: 0, delay: 2});
+});
+
+</script>

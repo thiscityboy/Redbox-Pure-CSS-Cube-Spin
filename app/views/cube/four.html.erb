@@ -143,7 +143,7 @@ body {
 
 	<%= image_tag("header.png", :width => "100%", :class => "header") %>
 	<%= image_tag("rboffun.png", :width => "70%", :class => "name") %>
-	<%= image_tag("mask.png", :width => "100%", :class => "mask") %>
+	<%= image_tag("mask-01.svg", :width => "100%", :class => "mask") %>
 		<div class="copy">USE CODE</div>
 		<div class="code">5KJDQQMJ</div>
 			<div class="viewport">
@@ -165,7 +165,7 @@ body {
 <script>
 $(".mask").on("click",function(){
 
-    TweenMax.to(".custom-cube", 2, {rotationY: -1080, transformOrigin:"center"});
+    TweenMax.to(".custom-cube", 2, {rotationY: -360, transformOrigin:"center"});
     TweenMax.to(".name", 1, {opacity: 0});
     TweenMax.to(".custom-cube", 1, {rotationX: -30, transformOrigin:"center", delay: 1});
     TweenMax.to(".custom-cube > div:first-child", 1, {rotationY: 80, z: -300, transformOrigin:"top", delay: 1.75});
